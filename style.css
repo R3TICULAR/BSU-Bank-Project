@@ -73,3 +73,7 @@ h1.text-center.text-info {
 h5 {
     font-size: 30px;
 }
+.logout{
+    margin: auto;
+    font-size: medium;
+}
