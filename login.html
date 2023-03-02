@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowie State Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Background Animation</title>
+  <style>
+    body {
+      background-image: url("bg-image.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    
+    @keyframes bg-animation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Bank of Bowie State University</h1>
+      <h3>Login</h3>
+      <form action="#" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+  
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+  
+        <button type="submit" onclick="validateLogin()">Login</button>
+  
+        <div class="options">
+            <button onclick="window.location.href='forgotpass.html'">Forgot Password</button>
+            <button onclick="window.location.href='register.html'">Register</button>
+        </div>
+      </form>
+    </div>
+    
+    
+    <script>
+
+        // login button event handlar
+        const loginButton = document.getElementById("login");
+        loginButton.addEventListener("click", function () {
+            const loginArea = document.getElementById("login-page");
+            loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        })
+
+        function validateLogin() {
+    // Get the values of the username and password input fields
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+  
+    // Check if the username and password are valid (e.g., match the expected values)
+    if (username === "myusername" && password === "mypassword") {
+      // Redirect the user to the "userAccount.html" page
+      window.location.href = "userAccount.html";
+    } else {
+      // Display an error message to the user
+      alert("Invalid username or password. Please try again.");
+    }
+  }  
+    </script>
+    </body>
+
+</html>
