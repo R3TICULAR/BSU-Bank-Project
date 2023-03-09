@@ -28,20 +28,18 @@
     <div class="container">
       <h1>Welcome to the Bank of Bowie State University</h1>
       <h3>Login</h3>
-      <form action="#" method="POST">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username"><br><br>
   
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password"><br><br>
   
-        <button type="submit" onclick="validateLogin()">Login</button>
+        <input type="button" id='login' value="Login & save data" onclick="saveFile()"/>
   
         <div class="options">
             <button onclick="window.location.href='forgotpass.html'">Forgot Password</button>
             <button onclick="window.location.href='register.html'">Register</button>
         </div>
-      </form>
     </div>
     
     
@@ -51,25 +49,59 @@
         const loginButton = document.getElementById("login");
         loginButton.addEventListener("click", function () {
             const loginArea = document.getElementById("login-page");
-            loginArea.style.display = "none";
+            //loginArea.style.display = "none";
             const transactionArea = document.getElementById("transaction-area");
             transactionArea.style.display = "block";
         })
 
         function validateLogin() {
-    // Get the values of the username and password input fields
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+      // Get the values of the username and password input fields
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
   
-    // Check if the username and password are valid (e.g., match the expected values)
-    if (username === "myusername" && password === "mypassword") {
+      // Check if the username and password are valid (e.g., match the expected values)
+      if (username === "myusername" && password === "mypassword") {
       // Redirect the user to the "userAccount.html" page
       window.location.href = "userAccount.html";
-    } else {
+      } else {
       // Display an error message to the user
       alert("Invalid username or password. Please try again.");
+      }
     }
-  }  
+
+    let saveFile = () => {
+      // Get the data from each element on form
+
+      const uName = document.getElementById('username');
+      const pWord = document.getElementById('password');
+
+      // Set variable to store Data
+
+      let info = 
+        '\r Username: ' + uName.value + ' \r\n ' +
+        'Password: ' + pWord.value + ' \r\n ';
+
+      // Convert information into BLOB
+
+      const textToBLOB = new Blob([info], { type: 'text/plain' });
+      const sFileName = 'formData.txt';  // The file where login info is saved
+
+      let newLink = document.createElement("a");
+      newLink.download = sFileName;
+
+      if(window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        // newlink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+      else {
+        newlink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+      newLink.click();
+    }
+    
     </script>
     </body>
 
