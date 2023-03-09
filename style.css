@@ -1,69 +1,3 @@
-/* body{
-    padding: 100px;
-}
-h1 {
-
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.login-area{
-    margin-top: 50px;
-    box-shadow: 5px 5px 20px rgb(129, 126, 126);
-    padding: 30px;
-    border-radius: 12px;
-}
-#transaction-area{
-    display: none;
-}
-.coloum-style{
-    margin: 0 20px;
-    padding: 30px;
-    color: white;
-    border-radius: 12px;
-    box-shadow: 2px 2px 10px dimgray;
-}
-.deposit{
-    background-color: slateblue;
-}
-.withdraw{
-    background-color: lightsalmon;
-}
-.amount{
-    background-color: orange;
-}
-@media only screen and (max-width: 768px){
-    *{
-        margin: 0px;
-        padding: 0px;
-    }
-h3 {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    text-transform: uppercase; 
-}
-h1.text-center.text-info {
-    font-size: 25px;
-}
-body {
-    padding: 34px;
-}
-h1.text-center.text-info {
-    margin-top: 83px;
-    text-transform: uppercase;
-    font-size: 31px;
-}
-.col-md-4.phone-view {
-    margin-bottom: 23px;
-    text-align: center;
-    font-family: fangsong;
-}
-h5 {
-    font-size: 30px;
-}
-
-}  */
-
-/* Reset styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -230,7 +164,49 @@ h5 {
   }
   
   /* Apply animation to body element */
-  body {
+  /*body {
     animation: bg-animation 15s ease infinite;
-  }
+  }*/
   
+  .login-rectangle {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 750px;
+    top: 75px;
+
+    padding-inline: 50px;
+    padding-top: 35px;
+
+    background: rgba(253, 212, 80, 0.9);
+    border-radius: 50px;
+  }
+
+  .login-button {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+
+    background: #FDD44B;
+    border-radius: 50px;
+  }
+  .forgotpass-button {
+    position: absolute;
+    width: 150px;
+    height: 25px;
+
+    background: #FDD44B;
+    border-radius: 50px;
+  }
+  .register-button {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+
+    background: #FDD44B;
+    border-radius: 50px;
+  }
+
+.login-table{
+  
+}
