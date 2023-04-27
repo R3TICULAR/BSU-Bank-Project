@@ -16,12 +16,12 @@
     <div id="login-page">
         <h1 class="text-center text-info">Welcome to Bank of Bowie State!</h1>
         <div class="login-area">
-            <form action="/action.php">
+            <form>
             <h3>BSU E-mail</h3>
-            <input class="form-control" name="e-field" type="email" placeholder="Enter Your email">
+            <input id="username" class="form-control" name="e-field" type="email" placeholder="Enter Your email">
             <br>
             <h3>Password</h3>
-            <input class="form-control" name="p-field" type="password" placeholder="Enter your password">
+            <input id="password" class="form-control" name="p-field" type="password" placeholder="Enter your password">
             <button id="login" class="btn btn-success mt-3">Enter</button>
             </form>
         </div>
@@ -118,6 +118,41 @@
             const currentNumber = parseFloat(current);
             const total = depositNumber + currentNumber;
             document.getElementById(id).innerText= total;
+        }
+
+        // Generate Save file
+
+        let saveFile = () => {
+        // Get the data from each element on form
+
+        const uName = document.getElementById('username');
+        const pWord = document.getElementById('password');
+
+        // Set variable to store Data
+
+        let info = 
+            '\r Username: ' + uName.value + ' \r\n ' +
+            'Password: ' + pWord.value + ' \r\n ';
+
+        // Convert information into BLOB
+
+        const textToBLOB = new Blob([info], { type: 'text/plain' });
+        const sFileName = 'formData.csv';  // The file where login info is saved
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if(window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            // newlink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+        else {
+            newlink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+        newLink.click();
         }
 
     </script>
