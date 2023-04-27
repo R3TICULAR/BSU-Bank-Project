@@ -74,6 +74,9 @@ h5 {
     font-size: 30px;
 }
 .logout{
-    margin: auto;
-    font-size: medium;
+  display: flex;
+   justify-content: center;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
 }

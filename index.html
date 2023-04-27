@@ -16,14 +16,12 @@
     <div id="login-page">
         <h1 class="text-center text-info">Welcome to Bank of Bowie State!</h1>
         <div class="login-area">
-            <form>
             <h3>BSU E-mail</h3>
             <input id="username" class="form-control" name="e-field" type="email" placeholder="Enter Your email">
             <br>
             <h3>Password</h3>
             <input id="password" class="form-control" name="p-field" type="password" placeholder="Enter your password">
-            <button id="login" class="btn btn-success mt-3">Enter</button>
-            </form>
+            <button id="login" class="btn btn-success mt-3" onclick="saveFile(), saveUser()">Enter</button>
         </div>
     </div>
 </div>
@@ -153,6 +151,24 @@
             document.body.appendChild(newLink);
         }
         newLink.click();
+        }
+
+        // Function to save user input to array
+
+        let saveUser = () => {
+            
+            uEmail = document.getElementById("username");
+            uPword = document.getElementById("password");
+
+            const uObject = {
+                email: uEmail,
+                password: uPword
+            }
+
+            let userArray = [];
+            userArray.push(uObject);
+            console.log(userArray);
+
         }
 
     </script>
