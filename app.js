@@ -8,6 +8,10 @@ app.get("/", function(req, res) {
 });
 app.use(express.static(__dirname + '/public'));
 
+
+/*
 app.listen(PORT, () => {
-    console.log(`App is UP on port ${PORT}`);
+    // console.log(`App is UP on port ${PORT}`);
 });
+
+*/
