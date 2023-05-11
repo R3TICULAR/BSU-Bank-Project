@@ -4,7 +4,7 @@
   "description": "Senior Capstone Project for developing a bank web app for bowie state entrepreneurial center.",
   "main": "\u001b[D\u001b[D\u001b[C",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
