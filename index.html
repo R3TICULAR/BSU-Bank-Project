@@ -22,13 +22,14 @@
             <h3>Password</h3>
             <input id="password" class="form-control" name="p-field" type="password" placeholder="Enter your password">
             <button id="login" class="btn btn-success mt-3" onclick="saveFile(), saveUser()">Enter</button>
+            <button id="registerUser" class="regButton" target="_blank">Register</button>
         </div>
     </div>
 </div>
 <!--Main Menu Page-->
 
     <div id="transaction-area">
-
+        <h2>Welcome!</h2>
         <div class="row">
             <div class="col-md-4 phone-view">
                 <div class="deposit coloum-style">
@@ -70,9 +71,24 @@
         </div>
 
     </div>
+<!-- Register Page -->
+    <div id="registration">
+        <h1>Register</h1>
+         <form id="registerForm">
 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
 
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    </div>
 
     <script>
 
@@ -83,6 +99,14 @@
             loginArea.style.display = "none";
             const transactionArea = document.getElementById("transaction-area");
             transactionArea.style.display = "block";
+        })
+        // Register button event handlar
+        const registerButton = document.getElementById("registerUser")
+        registerButton.addEventListener("click", function() {
+            const loginArea = document.getElementById("login-page");
+            loginArea.style.display = "none";
+            const registerArea = document.getElementById("registration")
+            registerArea.style.display = "block";
         })
 
         // deposit event handlar
@@ -170,6 +194,35 @@
             console.log(userArray);
 
         }
+
+        let register = () => {
+
+            // Capture registration form inputs
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            // Validate registration form inputs
+            if (!email || !password || !confirmPassword) {
+            alert("Please fill in all fields.");
+            return;
+            }
+            if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+            }
+
+        // Store user information
+        const user = { email, password };
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        users.push(user);
+        console.log(users);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        // Navigate to login page
+        window.location.href = "index.html";
+      }
+        
 
     </script>
 

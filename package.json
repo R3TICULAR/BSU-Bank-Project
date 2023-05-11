@@ -1,0 +1,28 @@
+{
+  "name": "bsu-bank-project",
+  "version": "1.0.0",
+  "description": "Senior Capstone Project for developing a bank web app for bowie state entrepreneurial center.",
+  "main": "\u001b[D\u001b[D\u001b[C",
+  "scripts": {
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R3TICULAR/BSU-Bank-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R3TICULAR/BSU-Bank-Project/issues"
+  },
+  "homepage": "https://github.com/R3TICULAR/BSU-Bank-Project#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
