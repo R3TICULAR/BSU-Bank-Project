@@ -4,8 +4,7 @@
   "description": "Senior Capstone Project for developing a bank web app for bowie state entrepreneurial center.",
   "main": "\u001b[D\u001b[D\u001b[C",
   "scripts": {
-    "start": "npm run open",
-    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\"",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
