@@ -1,5 +1,5 @@
 body{
-    background-image: url("images/bowieBackground2.jpg");
+    background-image: url("/public/images/bowieBackground2.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: 0;
